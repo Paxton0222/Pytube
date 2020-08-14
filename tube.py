@@ -1,12 +1,12 @@
 from pytube import YouTube
 import os,shutil,subprocess,time
 class Youtube:
-    def __init__(self,url):
+    def __init__(self,url,userdir):
         try:
             os.makedirs('./YT/影片下載目錄')
         except:
             pass
-        self.dir = './YT/影片下載目錄'
+        self.dir = userdir
         self.url = url
         self.yt = YouTube(self.url)
         self.title = self.yt.title
@@ -92,7 +92,8 @@ class Youtube:
 
 if __name__ == "__main__":
     url = 'https://www.youtube.com/watch?v=kXptPzKNMq4&list=RDBaACrT6Ydik&index=18' #更改Url
-    tube = Youtube(url)
+    dir = r'C:\Users\paxto\Desktop\Tube\video' #指定儲存路徑
+    tube = Youtube(url,dir)
     data = tube.find() #查找是否有影片
     print(data) #影片資訊
     video = tube.download_mp4() #下載 mp4 檔案
