@@ -91,7 +91,7 @@ class Youtube:
         end='')
 
 if __name__ == "__main__":
-    url = 'https://www.youtube.com/watch?v=kXptPzKNMq4&list=RDBaACrT6Ydik&index=18' #更改Url
+    url = 'https://www.youtube.com/watch?v=qOcJA5fk3aI&list=RDMMqOcJA5fk3aI&start_radio=1&ab_channel=NightblueMusic' #更改Url
     dir = r'C:\Users\paxto\Desktop\Tube\video' #指定儲存路徑
     tube = Youtube(url,dir)
     data = tube.find() #查找是否有影片
