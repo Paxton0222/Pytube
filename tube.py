@@ -6,7 +6,8 @@ class Youtube:
             os.makedirs('./YT/影片下載目錄')
         except:
             pass
-        self.dir = userdir
+        self.dir = './YT/影片下載目錄'
+        self.userdir = userdir
         self.url = url
         self.yt = YouTube(self.url)
         self.title = self.yt.title
@@ -73,11 +74,13 @@ class Youtube:
             os.remove(self.new_audio_name)
             try:
                 os.rename('mix.mp4',self.title+'.mp4')
-                shutil.move(self.title+'.mp4',self.dir+'/'+self.title+'.mp4')
+                shutil.move(self.title+'.mp4',self.userdir+'/'+self.title+'.mp4')
+                shutil.rmtree('./YT')
             except:
                 self.time = time.strftime('%Y_%m_%d_%H_%M_%S')
                 os.rename('mix.mp4',self.time+'.mp4')
-                shutil.move(self.time+'.mp4',self.dir+'/'+self.time+'.mp4')
+                shutil.move(self.time+'.mp4',self.userdir+'/'+self.time+'.mp4')
+                shutil.rmtree('./YT')
         except:
             pass
 
