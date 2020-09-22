@@ -99,9 +99,8 @@ class Youtube:
         os.system('sudo apt install ffmpeg')
 
 if __name__ == "__main__":
-    url = 'https://www.youtube.com/watch?v=kXptPzKNMq4&list=RDBaACrT6Ydik&index=18' #更改Url
     url = input('輸入目標URL:')
-    dir = r'./video' #指定儲存路徑
+    dir = r'./YT\影片下載目錄' #指定儲存路徑
     tube = Youtube(url,dir)
     #tube.download_ffmpeg() #下載ffmpeg（會要求使用這輸入密碼）
     data = tube.find() #查找是否有影片
